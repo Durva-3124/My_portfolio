@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    </meta>
+    <title>Home page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(rgb(168, 120, 207), rgb(29, 2, 51));
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            background: linear-gradient(rgb(63, 50, 141), rgb(25, 7, 73));
+            justify-content: space-around;
+            align-items: center;
+            height: 150px;
+
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+            margin-top: 50px;
+            font-weight: bold;
+            font-size: larger;
+            text-shadow: 0 10px 15px black;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+
+            color: rgb(156, 96, 190);
+            font-size: 1.3rem;
+        }
+
+        .left {
+            font-size: 50px;
+            font-family: Edu NSW ACT Cursive;
+            font-weight: bolder;
+            text-shadow: 0 10px 15px black;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            margin: 150px 0;
+
+        }
+
+        .firstsection div {
+            width: 30%;
+        }
+
+        .leftsection {
+
+
+            border-radius: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500;
+            margin-top: 80px;
+            font-size: 40px;
+            text-align: center;
+            color: rgb(219, 208, 208);
+            text-shadow: 0 10px 15px black;
+        }
+
+        .rightsection img {
+
+            width: 540px;
+            height: 80%;
+            margin-top: 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 15px black;
+
+        }
+
+        .Durva {
+            font-weight: bolder;
+            /* font-size:x-large; */
+            text-align: center;
+        }
+
+        .Durva {
+            color: rgb(118, 219, 223);
+            font-weight: bolder;
+        }
+
+        #element {
+            color: rgb(108, 13, 146);
+            text-shadow: 0 10px 15px rgb(188, 141, 206);
+            font-weight: bolder;
+            font-family: Edu NSW ACT Cursive;
+        }
+
+        hr {
+            color: blueviolet;
+            border-radius: 20px;
+
+        }
+
+        .secondsection {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            font-size: 30px;
+            margin-top: 40px
+        }
+
+        .description {
+            margin-top: 50px;
+            color: rgb(180, 140, 226);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            margin-bottom: 70px;
+        }
+
+        .Branch {
+            color: rgb(126, 104, 204);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+            color: rgb(188, 189, 231);
+            text-shadow: 0 10px 15px rgb(56, 15, 150);
+            text-align: center;
+        }
+
+        .left-container {
+            padding: 10px 50px;
+            position: relative;
+            width: 35%;
+            background: linear-gradient(rgb(116, 116, 223), rgb(87, 12, 173));
+            border-radius: 40px;
+            box-shadow: 0 10px 15px rgb(46, 7, 90);
+            left: 0;
+            margin-bottom: 40px;
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+
+        .right-container {
+            padding: 10px 50px;
+            position: relative;
+            width: 35%;
+            background: linear-gradient(rgb(116, 116, 223), rgb(87, 12, 173));
+            border-radius: 40px;
+            box-shadow: 0 10px 15px rgb(44, 3, 68);
+            left: 58%;
+            margin-bottom: 40px;
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: white;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+            animation: moveline 5s linear forwards;
+        }
+
+        @keyframes moveline {
+            0% {
+                height: 0;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
+
+        .left-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 50px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid white;
+            right: -15px;
+
+        }
+
+        @keyframes movedown {
+            0% {
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        .right-container-arrow {
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 50px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid white;
+            left: -15px;
+
+        }
+
+        .timeline>div.active {
+            animation: movedown 1s linear forwards;
+            opacity: 0;
+        }
+
+        .timeline>div:nth-child(1) {
+            animation-delay: 2s;
+        }
+
+        .timeline>div:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .timeline>div:nth-child(3) {
+            animation-delay: 4s;
+        }
+
+        .timeline>div:nth-child(4) {
+            animation-delay: 5s;
+        }
+
+        .best {
+            margin-left: 40%;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: Edu NSW ACT Cursive;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+        }
+
+        .about {
+            margin-left: 45px;
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        .abt {
+            font-family: Edu NSW ACT Cursive;
+        }
+
+        .more {
+            font-family: Edu NSW ACT Cursive;
+            font-size: 40px;
+            font-weight: bolder;
+            color: rgb(84, 114, 209);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            text-align: center;
+        }
+
+        .edu {
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            margin-left: 50px;
+            font-size: 25px;
+        }
+
+        .bestSkills {
+            margin-left: 46%;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: Edu NSW ACT Cursive;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            margin-top: 50px;
+            width: 90%
+        }
+
+        .box {
+            display: flex;
+            flex-wrap: wrap;
+            /* flex-direction: column; */
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 70px;
+        }
+
+        .box1 {
+            flex: 1 1 40%;
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: black;
+            background: linear-gradient(rgb(116, 116, 223), rgb(87, 12, 173));
+            border-radius: 40px;
+            box-shadow: 0 10px 15px rgb(44, 3, 68);
+            color: rgb(188, 189, 231);
+            max-width: 40%;
+        }
+
+        .box2 {
+            flex: 1 1 40%;
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: black;
+            background: linear-gradient(rgb(116, 116, 223), rgb(87, 12, 173));
+            border-radius: 40px;
+            box-shadow: 0 10px 15px rgb(44, 3, 68);
+            color: rgb(188, 189, 231);
+            max-width: 40%;
+        }
+
+        .box3 {
+            flex: 1 1 40%;
+            font-size: 30px;
+            padding: 20px;
+            text-align: center;
+            background-color: black;
+            background: linear-gradient(rgb(116, 116, 223), rgb(87, 12, 173));
+            border-radius: 40px;
+            box-shadow: 0 10px 15px rgb(44, 3, 68);
+            color: rgb(188, 189, 231);
+            max-width: 40%;
+            margin-top: 30px;
+        }
+
+        .boxes {
+            font-size: 20px;
+        }
+
+        .tagline {
+            margin-left: 30%;
+            margin-right: 35%;
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: Edu NSW ACT Cursive;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            background: #f1f3ff;
+            color: #222;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hover effect */
+        .form input:hover {
+            background: #e7e9fc;
+            transform: scale(1.02);
+        }
+
+        /* Focus effect */
+        .form input:focus {
+            border: 2px solid #9b59b6;
+            background: #fff;
+            box-shadow: 0 6px 14px rgba(155, 89, 182, 0.3);
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            /* thickness */
+            width: 80%;
+            /* length */
+            margin: 20px auto;
+            /* center */
+            background: rgba(255, 255, 255, 0.3);
+            /* soft color */
+            border-radius: 5px;
+        }
+
+        .form label {
+            display: block;
+            margin: 10px 0 5px 5px;
+            /* top & left spacing */
+            font-size: 30px;
+            font-weight: 500;
+            color: #f0e6ff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            font-family: 'Poppins', sans-serif;
+            text-align: left;
+            /* keep aligned to the left */
+        }
+
+
+        .contact {
+
+            font-size: 40px;
+            font-weight: bolder;
+            font-family: Edu NSW ACT Cursive;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            margin-bottom: 50px;
+        }
+
+        .button {
+            font-size: 20px;
+            font-weight: bolder;
+            color: rgb(198, 177, 216);
+            text-shadow: 0 10px 15px rgb(0, 0, 8);
+            background-color: rgb(66, 12, 117);
+            margin-right: 15%;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 10px 15px rgb(16, 1, 31);
+            border-style: solid;
+            border-color: rgb(66, 12, 117);
+            margin-top: 50px;
+        }
+
+        .button:hover {
+            font-size: 21px;
+            box-shadow: 0 5px 12px rgb(159, 107, 201);
+
+        }
+    </style>
+    <header>
+        <nav>
+            <div class="left">Durva's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#form">Contact me</a></li>
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection">
+            <div class="leftsection">
+                Hey there! 👋 <br>I’m <span class="Durva">Durva</span><br>
+
+                <span id="element"></span>
+                <!-- <br>on a mission to turn wild ideas into working realities. -->
+
+                <!-- <br>I’m currently pursuing Artificial Intelligence & Machine Learning at PES Modern College of Engineering, where I spend my days building, breaking, and rebuilding projects until they’re smarter, faster, and cooler than before.
+
+<br>✨ What I do best:
+
+<br>🖥 Programming Wizardry: Python, C++, JavaScript
+
+<br>🌐 Web Magic: Sleek, responsive, and interactive websites
+
+<br>🤖 AI & ML Adventures: From chatbots to deepfake detection
+
+<br>🚍 Impactful Projects: Like Track Nova — a real-time bus tracking system for smarter cities
+
+<br>I believe in tech that’s not just smart, but also meaningful. My work blends creativity with logic, and my goal is simple — make technology feel human.
+
+<br>When I’m not debugging code, you’ll find me brainstorming my next big idea… because for me, the future isn’t something we wait for — it’s something we build. -->
+
+
+                <div>
+
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="image.jpg"
+                    alt="Image">
+            </div>
+        </section>
+        <hr>
+        <selection id="about">
+            <section class="secondsection">
+                <h1 class="abt">🎓About</h1>
+                <div class="description">Pursuing B.Tech in <strong class="Branch">Artificial Intelligence & Machine
+                        Learning</strong> at PES’s Modern College of Engineering, where I dive into DSA, ML, Web
+                    Development, and Python magic.
+                    From building real-time tracking systems to crafting sleek, interactive websites, I’m all about
+                    turning
+                    ideas into tech that works — and wows.</div>
+            </section>
+    </main>
+    <p><br><strong class="best">What I do best:</strong>
+    <div class="timeline">
+        <div class="left-container">
+            <div class="text-box">
+                <h1>🌐 Web Magic</h1>
+
+                <p><br>Sleek, responsive, and <br>interactive websites</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="text-box">
+                <h1>🤖 AI & ML Adventures</h1>
+
+                <p><br>From chatbots to ><br>deepfake detection</p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+        <div class="left-container">
+            <div class="text-box">
+                <h1>💻 Programming Wizardry</h1>
+
+                <p><br>Python, C++, <br>JavaScript</p>
+
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+        <div class="right-container">
+            <div class="text-box">
+                <h1>🚍 Impactful Projects</h1>
+
+                <p><br>Like Track Nova — a real-time bus tracking system for smarter cities</p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="about">
+        <p><br><strong class="more">More about me: </strong>
+        <div class="edu">
+            <strong><br>🏫 Sharda English Medium School (2009–2022)</strong>
+
+            <br>Strong foundation in knowledge & discipline.
+
+            <br><strong><br>🎓 R.R. Shinde Junior College (2022–2024)</strong>
+
+            <br>Strengthened academics, focus & adaptability.
+
+            <br><strong><br>🏛️ PES’s Modern College of Engineering – AIML (2024–Present)</strong>
+
+            <br>Building expertise in Artificial Intelligence & professional skills.
+
+        </div>
+        </p>
+        </selection>
+    </div>
+    <hr>
+    <selection id="skills">
+        <div class="box">
+            <h1 class="bestSkills">Skills:</h1>
+            <div class="box1">
+                <strong>⚡ Technical Skills</strong>
+
+                <div class="boxes">
+                    Programming Languages → Python, C++, Java, JavaScript
+
+                    Web Development → HTML, CSS, JavaScript, React, Node.js
+
+                    DSA → Arrays, Linked Lists, Trees, Graphs, Sorting & Searching
+                </div>
+
+            </div>
+            <div class="box2">
+                <strong>🎨 Creative & Development Skills</strong>
+
+                <div class="boxes">
+                    UI/UX Design (basic understanding of user-friendly design)
+
+
+                    Responsive Web Design (mobile-first approach)
+
+                    Project Prototyping & Wireframing (Figma/Canva )
+                </div>
+            </div>
+            <div class="box3">
+                <strong>💡 Professional Skills
+                </strong>
+                <div class="boxes">
+                    Problem-Solving & Logical Thinking
+
+                    Team Collaboration & Communication
+
+                    Leadership (through projects/college activities)
+
+                    Time Management
+
+                    Adaptability & Quick Learning
+                </div>
+
+            </div>
+
+            <h1 class="tagline">✨ “Skills in progress, passion in action.”</h1>
+            <hr>
+    </selection>
+    <selection id="form">
+    <form class="form">
+
+        <h1 class="contact">📞 Contact me for more information</h1>
+        <div>
+            <ul>
+                <label for="username">Enter your name : </label>
+                <input id="Username" placeholder="Enter our name" type="text">
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <label for="email">Enter your email-id : </label>
+                <input id="email" placeholder="Enter your email-id" type="text">
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <label for="number">Enter your mobile number : </label>
+                <input id="number" placeholder="Enter your number" type="number">
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <label for="Query">Any Query? : </label>
+                <input id="text" placeholder="Enter your query" type="text">
+            </ul>
+        </div>
+        <button class="button" onclick="func()">Submit</button>
+    </form>
+    </selection>
+    <script>
+        function func(){
+            alert("Your form submitted sucessfully!.I'll contact you in a while.Thankyou got reaching out!!");
+        }
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ["a Tech explorer", "Code crafter", "AI dreamer", "and Web developer"],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+</body>
+
+</html>
